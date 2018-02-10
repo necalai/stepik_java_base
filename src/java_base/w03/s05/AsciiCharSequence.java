@@ -3,7 +3,7 @@ package java_base.w03.s05;
 import java.util.Arrays;
 
 public class AsciiCharSequence implements CharSequence {
-    byte[] bytesArray;
+    private byte[] bytesArray;
 
     public AsciiCharSequence(byte... bytesArray) {
         this.bytesArray = bytesArray;
@@ -26,11 +26,6 @@ public class AsciiCharSequence implements CharSequence {
 
     @Override
     public String toString() {
-        StringBuilder bytesToString = new StringBuilder();
-        for (byte next : bytesArray) {
-            bytesToString.append((char) next);
-        }
-
-        return bytesToString.toString();
+        return new String(bytesArray);
     }
 }
